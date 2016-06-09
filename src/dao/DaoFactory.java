@@ -7,5 +7,8 @@ public class DaoFactory {
         DaoFactory instance = new DaoFactory();
         return instance;
     }
-   
+
+    public AddAdDao getAddAdDao() {
+        return new AddAdDaoImpl(this);
+    }
 }
