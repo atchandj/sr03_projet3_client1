@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.AddAdDao;
 import dao.DAOConfigurationException;
 import dao.DaoException;
 import dao.DaoFactory;
@@ -45,6 +44,7 @@ public class DropAd extends HttpServlet {
 		String adName = request.getParameter("adName");
 		try {
 			this.dropAdDao.dropAd(yearBook, adName);
+			request.setAttribute("successMessage", "Suppression effectuée avec succès");
 		} catch (DaoException e) {
 			errorMessage = e.getMessage();
 			request.setAttribute("errorMessage", errorMessage);

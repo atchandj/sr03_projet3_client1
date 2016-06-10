@@ -49,6 +49,7 @@ public class AddAd extends HttpServlet {
 		String category = request.getParameter("category");
 		try {
 			this.addAdDao.addAd(yearBook, adName, phone, street, town, postCode, category);
+			request.setAttribute("successMessage", "Ajout effectué avec succès");
 		} catch (DaoException e) {
 			errorMessage = e.getMessage();
 			request.setAttribute("errorMessage", errorMessage);

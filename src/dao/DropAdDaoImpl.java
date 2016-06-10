@@ -5,10 +5,8 @@ import java.rmi.RemoteException;
 import DefaultNamespace.MainProxy;
 
 public class DropAdDaoImpl implements DropAdDao {
-	private DaoFactory daoFactory;
-
-    public DropAdDaoImpl(DaoFactory daoFactory) {
-        this.daoFactory = daoFactory;
+	
+	public DropAdDaoImpl(DaoFactory daoFactory) {
     }
     
     @Override
@@ -17,7 +15,7 @@ public class DropAdDaoImpl implements DropAdDao {
     	try {
     		mainProxy.dropAd(yearBook, adName);
 		} catch (RemoteException e) {
-			throw new DaoException("Impossible d'appeler le web service : " + e.getMessage());
+			throw new DaoException(e.getMessage());
 		}
 
 	}

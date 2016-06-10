@@ -88,171 +88,171 @@ case 25:
         gotMethod = true;
         String yearBook_4id=  request.getParameter("yearBook28");
         int yearBook_4idTemp  = Integer.parseInt(yearBook_4id);
-        String oldAdName_5id=  request.getParameter("oldAdName30");
-            java.lang.String oldAdName_5idTemp = null;
-        if(!oldAdName_5id.equals("")){
-         oldAdName_5idTemp  = oldAdName_5id;
-        }
-        String oldStreet_6id=  request.getParameter("oldStreet32");
-            java.lang.String oldStreet_6idTemp = null;
-        if(!oldStreet_6id.equals("")){
-         oldStreet_6idTemp  = oldStreet_6id;
-        }
-        String oldTown_7id=  request.getParameter("oldTown34");
-            java.lang.String oldTown_7idTemp = null;
-        if(!oldTown_7id.equals("")){
-         oldTown_7idTemp  = oldTown_7id;
-        }
-        String oldPostCode_8id=  request.getParameter("oldPostCode36");
-            java.lang.String oldPostCode_8idTemp = null;
-        if(!oldPostCode_8id.equals("")){
-         oldPostCode_8idTemp  = oldPostCode_8id;
-        }
-        String oldCategory_9id=  request.getParameter("oldCategory38");
-            java.lang.String oldCategory_9idTemp = null;
-        if(!oldCategory_9id.equals("")){
-         oldCategory_9idTemp  = oldCategory_9id;
-        }
-        String newAdName_10id=  request.getParameter("newAdName40");
-            java.lang.String newAdName_10idTemp = null;
-        if(!newAdName_10id.equals("")){
-         newAdName_10idTemp  = newAdName_10id;
-        }
-        String newPhone_11id=  request.getParameter("newPhone42");
-            java.lang.String newPhone_11idTemp = null;
-        if(!newPhone_11id.equals("")){
-         newPhone_11idTemp  = newPhone_11id;
-        }
-        String newStreet_12id=  request.getParameter("newStreet44");
-            java.lang.String newStreet_12idTemp = null;
-        if(!newStreet_12id.equals("")){
-         newStreet_12idTemp  = newStreet_12id;
-        }
-        String newTown_13id=  request.getParameter("newTown46");
-            java.lang.String newTown_13idTemp = null;
-        if(!newTown_13id.equals("")){
-         newTown_13idTemp  = newTown_13id;
-        }
-        String newPostCode_14id=  request.getParameter("newPostCode48");
-            java.lang.String newPostCode_14idTemp = null;
-        if(!newPostCode_14id.equals("")){
-         newPostCode_14idTemp  = newPostCode_14id;
-        }
-        String newCategory_15id=  request.getParameter("newCategory50");
-            java.lang.String newCategory_15idTemp = null;
-        if(!newCategory_15id.equals("")){
-         newCategory_15idTemp  = newCategory_15id;
-        }
-        sampleMainProxyid.modifyAd(yearBook_4idTemp,oldAdName_5idTemp,oldStreet_6idTemp,oldTown_7idTemp,oldPostCode_8idTemp,oldCategory_9idTemp,newAdName_10idTemp,newPhone_11idTemp,newStreet_12idTemp,newTown_13idTemp,newPostCode_14idTemp,newCategory_15idTemp);
-break;
-case 52:
-        gotMethod = true;
-        String category_16id=  request.getParameter("category55");
-            java.lang.String category_16idTemp = null;
-        if(!category_16id.equals("")){
-         category_16idTemp  = category_16id;
-        }
-        sampleMainProxyid.dropCategory(category_16idTemp);
-break;
-case 57:
-        gotMethod = true;
-        String yearBook_17id=  request.getParameter("yearBook60");
-        int yearBook_17idTemp  = Integer.parseInt(yearBook_17id);
-        String adName_18id=  request.getParameter("adName62");
-            java.lang.String adName_18idTemp = null;
-        if(!adName_18id.equals("")){
-         adName_18idTemp  = adName_18id;
-        }
-        sampleMainProxyid.dropAd(yearBook_17idTemp,adName_18idTemp);
-break;
-case 64:
-        gotMethod = true;
-        String yearBook_19id=  request.getParameter("yearBook67");
-        int yearBook_19idTemp  = Integer.parseInt(yearBook_19id);
-        java.lang.String getAdsNames64mtemp = sampleMainProxyid.getAdsNames(yearBook_19idTemp);
-if(getAdsNames64mtemp == null){
+        java.lang.String getAdsNames25mtemp = sampleMainProxyid.getAdsNames(yearBook_4idTemp);
+if(getAdsNames25mtemp == null){
 %>
-<%=getAdsNames64mtemp %>
+<%=getAdsNames25mtemp %>
 <%
 }else{
-        String tempResultreturnp65 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsNames64mtemp));
+        String tempResultreturnp26 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAdsNames25mtemp));
         %>
-        <%= tempResultreturnp65 %>
+        <%= tempResultreturnp26 %>
         <%
 }
 break;
-case 69:
+case 30:
         gotMethod = true;
-        String yearBook_20id=  request.getParameter("yearBook72");
-        int yearBook_20idTemp  = Integer.parseInt(yearBook_20id);
-        java.lang.String getYearBook69mtemp = sampleMainProxyid.getYearBook(yearBook_20idTemp);
-if(getYearBook69mtemp == null){
+        String yearBook_5id=  request.getParameter("yearBook33");
+        int yearBook_5idTemp  = Integer.parseInt(yearBook_5id);
+        java.lang.String getYearBook30mtemp = sampleMainProxyid.getYearBook(yearBook_5idTemp);
+if(getYearBook30mtemp == null){
 %>
-<%=getYearBook69mtemp %>
+<%=getYearBook30mtemp %>
 <%
 }else{
-        String tempResultreturnp70 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getYearBook69mtemp));
+        String tempResultreturnp31 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getYearBook30mtemp));
         %>
-        <%= tempResultreturnp70 %>
+        <%= tempResultreturnp31 %>
         <%
 }
 break;
-case 74:
+case 35:
         gotMethod = true;
-        String yearBook_21id=  request.getParameter("yearBook77");
-        int yearBook_21idTemp  = Integer.parseInt(yearBook_21id);
-        String adName_22id=  request.getParameter("adName79");
-            java.lang.String adName_22idTemp = null;
-        if(!adName_22id.equals("")){
-         adName_22idTemp  = adName_22id;
+        String yearBook_6id=  request.getParameter("yearBook38");
+        int yearBook_6idTemp  = Integer.parseInt(yearBook_6id);
+        String adName_7id=  request.getParameter("adName40");
+            java.lang.String adName_7idTemp = null;
+        if(!adName_7id.equals("")){
+         adName_7idTemp  = adName_7id;
         }
-        java.lang.String getAd74mtemp = sampleMainProxyid.getAd(yearBook_21idTemp,adName_22idTemp);
-if(getAd74mtemp == null){
+        java.lang.String getAd35mtemp = sampleMainProxyid.getAd(yearBook_6idTemp,adName_7idTemp);
+if(getAd35mtemp == null){
 %>
-<%=getAd74mtemp %>
+<%=getAd35mtemp %>
 <%
 }else{
-        String tempResultreturnp75 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAd74mtemp));
+        String tempResultreturnp36 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getAd35mtemp));
         %>
-        <%= tempResultreturnp75 %>
+        <%= tempResultreturnp36 %>
         <%
 }
 break;
-case 81:
+case 42:
         gotMethod = true;
-        String yearBook_23id=  request.getParameter("yearBook84");
-        int yearBook_23idTemp  = Integer.parseInt(yearBook_23id);
-        String adName_24id=  request.getParameter("adName86");
-            java.lang.String adName_24idTemp = null;
-        if(!adName_24id.equals("")){
-         adName_24idTemp  = adName_24id;
+        String yearBook_8id=  request.getParameter("yearBook45");
+        int yearBook_8idTemp  = Integer.parseInt(yearBook_8id);
+        String adName_9id=  request.getParameter("adName47");
+            java.lang.String adName_9idTemp = null;
+        if(!adName_9id.equals("")){
+         adName_9idTemp  = adName_9id;
         }
-        String phone_25id=  request.getParameter("phone88");
-            java.lang.String phone_25idTemp = null;
-        if(!phone_25id.equals("")){
-         phone_25idTemp  = phone_25id;
+        String phone_10id=  request.getParameter("phone49");
+            java.lang.String phone_10idTemp = null;
+        if(!phone_10id.equals("")){
+         phone_10idTemp  = phone_10id;
         }
-        String street_26id=  request.getParameter("street90");
-            java.lang.String street_26idTemp = null;
-        if(!street_26id.equals("")){
-         street_26idTemp  = street_26id;
+        String street_11id=  request.getParameter("street51");
+            java.lang.String street_11idTemp = null;
+        if(!street_11id.equals("")){
+         street_11idTemp  = street_11id;
         }
-        String town_27id=  request.getParameter("town92");
-            java.lang.String town_27idTemp = null;
-        if(!town_27id.equals("")){
-         town_27idTemp  = town_27id;
+        String town_12id=  request.getParameter("town53");
+            java.lang.String town_12idTemp = null;
+        if(!town_12id.equals("")){
+         town_12idTemp  = town_12id;
         }
-        String postCode_28id=  request.getParameter("postCode94");
-            java.lang.String postCode_28idTemp = null;
-        if(!postCode_28id.equals("")){
-         postCode_28idTemp  = postCode_28id;
+        String postCode_13id=  request.getParameter("postCode55");
+            java.lang.String postCode_13idTemp = null;
+        if(!postCode_13id.equals("")){
+         postCode_13idTemp  = postCode_13id;
         }
-        String category_29id=  request.getParameter("category96");
-            java.lang.String category_29idTemp = null;
-        if(!category_29id.equals("")){
-         category_29idTemp  = category_29id;
+        String category_14id=  request.getParameter("category57");
+            java.lang.String category_14idTemp = null;
+        if(!category_14id.equals("")){
+         category_14idTemp  = category_14id;
         }
-        sampleMainProxyid.addAd(yearBook_23idTemp,adName_24idTemp,phone_25idTemp,street_26idTemp,town_27idTemp,postCode_28idTemp,category_29idTemp);
+        sampleMainProxyid.addAd(yearBook_8idTemp,adName_9idTemp,phone_10idTemp,street_11idTemp,town_12idTemp,postCode_13idTemp,category_14idTemp);
+break;
+case 59:
+        gotMethod = true;
+        String yearBook_15id=  request.getParameter("yearBook62");
+        int yearBook_15idTemp  = Integer.parseInt(yearBook_15id);
+        String oldAdName_16id=  request.getParameter("oldAdName64");
+            java.lang.String oldAdName_16idTemp = null;
+        if(!oldAdName_16id.equals("")){
+         oldAdName_16idTemp  = oldAdName_16id;
+        }
+        String oldStreet_17id=  request.getParameter("oldStreet66");
+            java.lang.String oldStreet_17idTemp = null;
+        if(!oldStreet_17id.equals("")){
+         oldStreet_17idTemp  = oldStreet_17id;
+        }
+        String oldTown_18id=  request.getParameter("oldTown68");
+            java.lang.String oldTown_18idTemp = null;
+        if(!oldTown_18id.equals("")){
+         oldTown_18idTemp  = oldTown_18id;
+        }
+        String oldPostCode_19id=  request.getParameter("oldPostCode70");
+            java.lang.String oldPostCode_19idTemp = null;
+        if(!oldPostCode_19id.equals("")){
+         oldPostCode_19idTemp  = oldPostCode_19id;
+        }
+        String oldCategory_20id=  request.getParameter("oldCategory72");
+            java.lang.String oldCategory_20idTemp = null;
+        if(!oldCategory_20id.equals("")){
+         oldCategory_20idTemp  = oldCategory_20id;
+        }
+        String newAdName_21id=  request.getParameter("newAdName74");
+            java.lang.String newAdName_21idTemp = null;
+        if(!newAdName_21id.equals("")){
+         newAdName_21idTemp  = newAdName_21id;
+        }
+        String newPhone_22id=  request.getParameter("newPhone76");
+            java.lang.String newPhone_22idTemp = null;
+        if(!newPhone_22id.equals("")){
+         newPhone_22idTemp  = newPhone_22id;
+        }
+        String newStreet_23id=  request.getParameter("newStreet78");
+            java.lang.String newStreet_23idTemp = null;
+        if(!newStreet_23id.equals("")){
+         newStreet_23idTemp  = newStreet_23id;
+        }
+        String newTown_24id=  request.getParameter("newTown80");
+            java.lang.String newTown_24idTemp = null;
+        if(!newTown_24id.equals("")){
+         newTown_24idTemp  = newTown_24id;
+        }
+        String newPostCode_25id=  request.getParameter("newPostCode82");
+            java.lang.String newPostCode_25idTemp = null;
+        if(!newPostCode_25id.equals("")){
+         newPostCode_25idTemp  = newPostCode_25id;
+        }
+        String newCategory_26id=  request.getParameter("newCategory84");
+            java.lang.String newCategory_26idTemp = null;
+        if(!newCategory_26id.equals("")){
+         newCategory_26idTemp  = newCategory_26id;
+        }
+        sampleMainProxyid.modifyAd(yearBook_15idTemp,oldAdName_16idTemp,oldStreet_17idTemp,oldTown_18idTemp,oldPostCode_19idTemp,oldCategory_20idTemp,newAdName_21idTemp,newPhone_22idTemp,newStreet_23idTemp,newTown_24idTemp,newPostCode_25idTemp,newCategory_26idTemp);
+break;
+case 86:
+        gotMethod = true;
+        String category_27id=  request.getParameter("category89");
+            java.lang.String category_27idTemp = null;
+        if(!category_27id.equals("")){
+         category_27idTemp  = category_27id;
+        }
+        sampleMainProxyid.dropCategory(category_27idTemp);
+break;
+case 91:
+        gotMethod = true;
+        String yearBook_28id=  request.getParameter("yearBook94");
+        int yearBook_28idTemp  = Integer.parseInt(yearBook_28id);
+        String adName_29id=  request.getParameter("adName96");
+            java.lang.String adName_29idTemp = null;
+        if(!adName_29id.equals("")){
+         adName_29idTemp  = adName_29id;
+        }
+        sampleMainProxyid.dropAd(yearBook_28idTemp,adName_29idTemp);
 break;
 }
 } catch (Exception e) { 

@@ -6,10 +6,8 @@ import DefaultNamespace.MainProxy;
 
 
 public class AddAdDaoImpl implements AddAdDao {
-	private DaoFactory daoFactory;
-
-    public AddAdDaoImpl(DaoFactory daoFactory) {
-        this.daoFactory = daoFactory;
+	
+	public AddAdDaoImpl(DaoFactory daoFactory) {
     }
     
     @Override
@@ -18,7 +16,7 @@ public class AddAdDaoImpl implements AddAdDao {
     	try {
 			mainProxy.addAd(yearBook, adName, phone, street, town, postCode, category);
 		} catch (RemoteException e) {
-			throw new DaoException("Impossible d'appeler le web service : " + e.getMessage());
+			throw new DaoException(e.getMessage());
 		}
 
 	}

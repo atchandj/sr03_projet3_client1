@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.AddAdDao;
 import dao.DAOConfigurationException;
 import dao.DaoException;
 import dao.DaoFactory;
@@ -55,6 +54,7 @@ public class ModifyAd extends HttpServlet {
 		String newCategory = request.getParameter("newCategory");
 		try {
 			this.modifyAdDao.modifyAd(yearBook, oldAdName, oldStreet, oldTown, oldPostCode, oldCategory, newAdName, newPhone, newStreet, newTown, newPostCode, newCategory);
+			request.setAttribute("successMessage", "Modification effectuée avec succès");
 		} catch (DaoException e) {
 			errorMessage = e.getMessage();
 			request.setAttribute("errorMessage", errorMessage);

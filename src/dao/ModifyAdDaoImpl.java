@@ -4,12 +4,9 @@ import java.rmi.RemoteException;
 
 import DefaultNamespace.MainProxy;
 
-
 public class ModifyAdDaoImpl implements ModifyAdDao {
-	private DaoFactory daoFactory;
-
-    public ModifyAdDaoImpl(DaoFactory daoFactory) {
-        this.daoFactory = daoFactory;
+	
+	public ModifyAdDaoImpl(DaoFactory daoFactory) {
     }
     
     @Override
@@ -18,7 +15,7 @@ public class ModifyAdDaoImpl implements ModifyAdDao {
     	try {
 			mainProxy.modifyAd(yearBook, oldAdName, oldStreet, oldTown, oldPostCode, oldCategory, newAdName, newPhone, newStreet, newTown, newPostCode, newCategory);
 		} catch (RemoteException e) {
-			throw new DaoException("Impossible d'appeler le web service : " + e.getMessage());
+			throw new DaoException(e.getMessage());
 		}
 
 	}

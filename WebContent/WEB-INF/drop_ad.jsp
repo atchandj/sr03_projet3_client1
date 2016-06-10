@@ -29,13 +29,23 @@
 								<input type="hidden" name="paction" value="<c:out value="${ paction }"/>" />
 								<input type="hidden" name="year_book" value="<c:out value="${ yearBook }"/>" />
 								<input type="submit" class="btn btn-default" value="Envoyer"/>
+								
 								<c:if test="${ !empty errorMessage }">
-							  	    <div id="subErrorMsg" class="alert alert-danger" role="alert"> 
+							  	    <div class="alert alert-danger" role="alert"> 
 										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 										<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 										<span class="sr-only">Error: </span><c:out value="${ errorMessage }" />
 									</div>
-								</c:if>						
+								</c:if>		
+								
+								<c:if test="${ !empty successMessage }">
+							  	    <div class="alert alert-success" role="alert"> 
+										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+										<span class="sr-only">Success: </span><c:out value="${ successMessage }" />
+									</div>
+								</c:if>	
+								
 							</div>
 						</div>
 					</div>
