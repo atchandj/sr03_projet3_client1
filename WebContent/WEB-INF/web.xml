@@ -18,4 +18,12 @@
     <servlet-name>AddAd</servlet-name>
     <url-pattern>/add_ad</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DropAd</servlet-name>
+    <servlet-class>servlets.DropAd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DropAd</servlet-name>
+    <url-pattern>/drop_ad</url-pattern>
+  </servlet-mapping>
 </web-app>
