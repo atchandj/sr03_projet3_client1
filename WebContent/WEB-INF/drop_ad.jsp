@@ -24,7 +24,7 @@
 							<div class="panel-body">
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="adName">Nom de l'annonce :</label>
-									<input type="text" id="adName" class="form-control" placeholder="Nom de l'annonce" name="adName" value="<c:out value="${ answer.value }"/>" autofocus required/>
+									<input type="text" id="adName" class="form-control" placeholder="Nom de l'annonce" name="adName" value="<c:out value=""/>" autofocus required/>
 								</div>
 								<input type="hidden" name="paction" value="<c:out value="${ paction }"/>" />
 								<input type="hidden" name="year_book" value="<c:out value="${ yearBook }"/>" />

@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav">
 				<li <c:if test="${ !empty param.addAd }">class="active"</c:if> ><a href="<c:url value="/add_ad"/>" title="Vers l'ajout d'annonce">Ajout d'annonce</a></li>
 				<li <c:if test="${ !empty param.dropAd }">class="active"</c:if> ><a href="<c:url value="/drop_ad"/>" title="Vers la suppression d'annonce">Suppression d'annonce</a></li>
-				<li <c:if test="${ !empty param.modifyAd }">class="active"</c:if> ><a href="<c:url value="#"/>" title="Vers la modification d'annonce">Modification d'annonce</a></li>
+				<li <c:if test="${ !empty param.modifyAd }">class="active"</c:if> ><a href="<c:url value="/modify_ad"/>" title="Vers la modification d'annonce">Modification d'annonce</a></li>
 			</ul>
 		</div>
 	</div>

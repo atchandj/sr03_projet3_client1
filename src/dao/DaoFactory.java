@@ -15,4 +15,8 @@ public class DaoFactory {
     public DropAdDao getDropAdDao() {
         return new DropAdDaoImpl(this);
     }
+    
+    public ModifyAdDao getModifyAdDao() {
+        return new ModifyAdDaoImpl(this);
+    }
 }

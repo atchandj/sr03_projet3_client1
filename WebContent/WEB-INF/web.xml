@@ -26,4 +26,12 @@
     <servlet-name>DropAd</servlet-name>
     <url-pattern>/drop_ad</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifyAd</servlet-name>
+    <servlet-class>servlets.ModifyAd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyAd</servlet-name>
+    <url-pattern>/modify_ad</url-pattern>
+  </servlet-mapping>
 </web-app>
