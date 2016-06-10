@@ -24,54 +24,90 @@
 							
 							<div class="panel-body">
 								<fieldset class="form-group">
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="oldAdName">Ancien nom de l'annonce :</label>
-									<input type="text" id="oldAdName" class="form-control" placeholder="Ancien nom de l'annonce" name="oldAdName" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newAdName">Nouveau nom de l'annonce :</label>
-									<input type="text" id="newAdName" class="form-control" placeholder="Nouveau nom de l'annonce" name="newAdName" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newPhone">Nouveau téléphone :</label>
-									<input type="text" id="newPhone" class="form-control" placeholder="Nouveau téléphone" name="newPhone" value="<c:out value=""/>" autofocus/>
-								</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="oldAdName">Ancien nom de l'annonce :</label>
+										<input list="oldAdsNames" name="oldAdName" class="form-control" placeholder="Ancien nom de l'annonce" autofocus required>
+										<datalist id="oldAdsNames">
+											<c:if test="${ !empty yearBookBean }">
+												<c:forEach var="ad" items="${ yearBookBean.ads }" varStatus="status">
+													<option value="<c:out value="${ ad.name }"/>">
+												</c:forEach>
+											</c:if>
+										</datalist>
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newAdName">Nouveau nom de l'annonce :</label>
+										<input type="text" id="newAdName" class="form-control" placeholder="Nouveau nom de l'annonce" name="newAdName" value="<c:out value=""/>" autofocus/>
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newPhone">Nouveau téléphone :</label>
+										<input type="text" id="newPhone" class="form-control" placeholder="Nouveau téléphone" name="newPhone" value="<c:out value=""/>" autofocus/>
+									</div>
 								</fieldset>
 								<fieldset class="form-group">
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="oldStreet">Ancienne rue :</label>
-									<input type="text" id="oldStreet" class="form-control" placeholder="Ancienne rue" name="oldStreet" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="oldTown">Ancienne ville :</label>
-									<input type="text" id="oldTown" class="form-control" placeholder="Ancienne ville" name="oldTown" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="oldPostCode">Ancien code postal :</label>
-									<input type="text" id="oldPostCode" class="form-control" placeholder="Ancien code postal" name="oldPostCode" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newStreet">Nouvelle rue :</label>
-									<input type="text" id="newStreet" class="form-control" placeholder="Nouvelle rue" name="newStreet" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newTown">Nouvelle ville :</label>
-									<input type="text" id="newTown" class="form-control" placeholder="Nouvelle ville" name="newTown" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newPostCode">Nouveau code postal :</label>
-									<input type="text" id="newPostCode" class="form-control" placeholder="Nouveau code postal" name="newPostCode" value="<c:out value=""/>" autofocus/>
-								</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="oldStreet">Ancienne rue :</label>
+										<input list=oldStreetsNames name="oldStreet" class="form-control" placeholder="Ancienne rue" autofocus required>
+										<datalist id="oldStreetsNames">
+											<c:if test="${ !empty oldStreetsNames }">
+												<c:forEach var="oldStreetName" items="${ oldStreetsNames }" varStatus="status">
+													<option value="<c:out value="${ oldStreetName }"/>">
+												</c:forEach>
+											</c:if>
+										</datalist>
+									</div>
+	
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="oldTown">Ancienne ville :</label>
+										<input list=oldTownsNames name="oldTown" class="form-control" placeholder="Ancienne ville" autofocus required>
+										<datalist id="oldTownsNames">
+											<c:if test="${ !empty oldTownsNames }">
+												<c:forEach var="oldTownName" items="${ oldTownsNames }" varStatus="status">
+													<option value="<c:out value="${ oldTownName }"/>">
+												</c:forEach>
+											</c:if>
+										</datalist>
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="oldPostCode">Ancien code postal :</label>
+										<input list=oldPostCodes name="oldPostCode" class="form-control" placeholder="Ancien code postal" autofocus required>
+										<datalist id=oldPostCodes>
+											<c:if test="${ !empty oldPostCodes }">
+												<c:forEach var="oldPostCode" items="${ oldPostCodes }" varStatus="status">
+													<option value="<c:out value="${ oldPostCode }"/>">
+												</c:forEach>
+											</c:if>
+										</datalist>								
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newStreet">Nouvelle rue :</label>
+										<input type="text" id="newStreet" class="form-control" placeholder="Nouvelle rue" name="newStreet" value="<c:out value=""/>" autofocus/>
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newTown">Nouvelle ville :</label>
+										<input type="text" id="newTown" class="form-control" placeholder="Nouvelle ville" name="newTown" value="<c:out value=""/>" autofocus/>
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newPostCode">Nouveau code postal :</label>
+										<input type="text" id="newPostCode" class="form-control" placeholder="Nouveau code postal" name="newPostCode" value="<c:out value=""/>" autofocus/>
+									</div>
 								</fieldset>
 								<fieldset class="form-group">
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="oldCategory">Ancienne catégorie :</label>
-									<input type="text" id="oldCategory" class="form-control" placeholder="Ancienne catégorie" name="oldCategory" value="<c:out value=""/>" autofocus/>
-								</div>
-								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
-									<label class="control-label" for="newCategory">Nouvelle catégorie :</label>
-									<input type="text" id="newCategory" class="form-control" placeholder="Nouvelle catégorie" name="newCategory" value="<c:out value="${ answer.value }"/>" autofocus/>
-								</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="oldCategory">Ancienne catégorie :</label>
+										<input list=oldCategoriesNames name="oldCategory" class="form-control" placeholder="Ancienne catégorie" autofocus required>
+										<datalist id="oldCategoriesNames">
+											<c:if test="${ !empty oldCategoriesNames }">
+												<c:forEach var="oldCategoryName" items="${ oldCategoriesNames }" varStatus="status">
+													<option value="<c:out value="${ oldCategoryName }"/>">
+												</c:forEach>
+											</c:if>
+										</datalist>									
+									</div>
+									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+										<label class="control-label" for="newCategory">Nouvelle catégorie :</label>
+										<input type="text" id="newCategory" class="form-control" placeholder="Nouvelle catégorie" name="newCategory" value="<c:out value="${ answer.value }"/>" autofocus/>
+									</div>
 								</fieldset>
 								
 								<input type="hidden" name="paction" value="<c:out value="${ paction }"/>" />

@@ -44,18 +44,6 @@ public class MainProxy implements DefaultNamespace.Main {
     return main;
   }
   
-  public void updateCategory(java.lang.String oldCategoryName, java.lang.String newCategoryName) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    main.updateCategory(oldCategoryName, newCategoryName);
-  }
-  
-  public void addCategory(java.lang.String categoryName) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    main.addCategory(categoryName);
-  }
-  
   public java.lang.String getAdsNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
     if (main == null)
       _initMainProxy();
@@ -84,6 +72,42 @@ public class MainProxy implements DefaultNamespace.Main {
     if (main == null)
       _initMainProxy();
     main.modifyAd(yearBook, oldAdName, oldStreet, oldTown, oldPostCode, oldCategory, newAdName, newPhone, newStreet, newTown, newPostCode, newCategory);
+  }
+  
+  public java.lang.String getCategoriesNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getCategoriesNames(yearBook);
+  }
+  
+  public java.lang.String getPostCodes(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getPostCodes(yearBook);
+  }
+  
+  public java.lang.String getStreetsNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getStreetsNames(yearBook);
+  }
+  
+  public java.lang.String getTownsNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getTownsNames(yearBook);
+  }
+  
+  public void updateCategory(java.lang.String oldCategoryName, java.lang.String newCategoryName) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    main.updateCategory(oldCategoryName, newCategoryName);
+  }
+  
+  public void addCategory(java.lang.String categoryName) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    main.addCategory(categoryName);
   }
   
   public void dropCategory(java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{

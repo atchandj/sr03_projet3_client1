@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.YearBook;
 import dao.DAOConfigurationException;
 import dao.DaoException;
 import dao.DaoFactory;
@@ -17,9 +18,11 @@ public class DropAd extends HttpServlet {
 	private static final String DROP_AD_JSP = "/WEB-INF/drop_ad.jsp";
 
     private DropAdDao dropAdDao;
-	
-    public DropAd() {
+    private int yearBook;
+    
+    public DropAd() {    	
         super();
+        this.yearBook = 1;
     }
     
     public void init() throws ServletException {
@@ -34,11 +37,21 @@ public class DropAd extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("paction", "dropAd");
-		request.setAttribute("yearBook", 1);
+		request.setAttribute("yearBook", this.yearBook);
+		YearBook yearBookBean = null;
+		String errorMessage = null;
+		try {
+			yearBookBean = this.dropAdDao.getAdsNames(this.yearBook);
+			request.setAttribute("yearBookBean", yearBookBean);
+		} catch (DaoException e) {
+			errorMessage = e.getMessage();
+			request.setAttribute("errorMessage", errorMessage);
+		}
 		this.getServletContext().getRequestDispatcher(DROP_AD_JSP).forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String errorMessage = null;
 		int yearBook = Integer.parseInt(request.getParameter("year_book"));
 		String adName = request.getParameter("adName");

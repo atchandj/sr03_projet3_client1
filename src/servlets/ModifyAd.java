@@ -1,11 +1,14 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.YearBook;
 import dao.DAOConfigurationException;
 import dao.DaoException;
 import dao.DaoFactory;
@@ -17,9 +20,11 @@ public class ModifyAd extends HttpServlet {
 	private static final String MODIFY_AD_JSP = "/WEB-INF/modify_ad.jsp";
 
     private ModifyAdDao modifyAdDao;
-	
+    private int yearBook;
+    
     public ModifyAd() {
         super();
+        this.yearBook = 1;
     }
     
     public void init() throws ServletException {
@@ -33,8 +38,26 @@ public class ModifyAd extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		YearBook yearBookBean = null;
+		String errorMessage = null;
 		request.setAttribute("paction", "modifyAdd");
-		request.setAttribute("yearBook", 1);
+		request.setAttribute("yearBook", this.yearBook);
+		try {
+			yearBookBean = this.modifyAdDao.getAdsNames(this.yearBook);			
+			ArrayList<String> categoriesNames = this.modifyAdDao.getCategoriesNames(this.yearBook);
+			ArrayList<String> postCodes = this.modifyAdDao.getPostCodes(this.yearBook);
+			ArrayList<String> streetsNames = this.modifyAdDao.getStreetsNames(this.yearBook);
+			ArrayList<String> townsNames = this.modifyAdDao.getTownsNames(this.yearBook);
+			request.setAttribute("yearBookBean", yearBookBean);
+			request.setAttribute("oldCategoriesNames", categoriesNames);
+			request.setAttribute("oldPostCodes", postCodes);
+			request.setAttribute("oldStreetsNames", streetsNames);
+			request.setAttribute("oldTownsNames", townsNames);
+		} catch (DaoException e) {
+			errorMessage = e.getMessage();
+			request.setAttribute("errorMessage", errorMessage);
+		}
+		
 		this.getServletContext().getRequestDispatcher(MODIFY_AD_JSP).forward(request, response);
 	}
 

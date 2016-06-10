@@ -4,9 +4,10 @@ import java.rmi.RemoteException;
 
 import DefaultNamespace.MainProxy;
 
-public class DropAdDaoImpl implements DropAdDao {
+public class DropAdDaoImpl extends AdDaoImpl implements DropAdDao {
 	
 	public DropAdDaoImpl(DaoFactory daoFactory) {
+		super(daoFactory);
     }
     
     @Override
@@ -19,4 +20,5 @@ public class DropAdDaoImpl implements DropAdDao {
 		}
 
 	}
+    
 }

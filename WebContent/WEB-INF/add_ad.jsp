@@ -32,19 +32,47 @@
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="street">Rue :</label>
-									<input type="text" id="street" class="form-control" placeholder="Rue" name="street" value="<c:out value=""/>" autofocus required/>
+									<input list=streetsNames name="street" class="form-control" placeholder="Rue" autofocus required>
+									<datalist id="streetsNames">
+										<c:if test="${ !empty streetsNames }">
+											<c:forEach var="streetsName" items="${ streetsNames }" varStatus="status">
+												<option value="<c:out value="${ streetsName }"/>">
+											</c:forEach>
+										</c:if>
+									</datalist>
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="town">Ville :</label>
-									<input type="text" id="town" class="form-control" placeholder="Ville" name="town" value="<c:out value=""/>" autofocus required/>
+									<input list=townsNames name="town" class="form-control" placeholder="Ville" autofocus required>
+									<datalist id="townsNames">
+										<c:if test="${ !empty townsNames }">
+											<c:forEach var="townsName" items="${ townsNames }" varStatus="status">
+												<option value="<c:out value="${ townsName }"/>">
+											</c:forEach>
+										</c:if>
+									</datalist>
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="postCode">Code postal :</label>
-									<input type="text" id="postCode" class="form-control" placeholder="Code postal" name="postCode" value="<c:out value=""/>" autofocus required/>
+									<input list=postCodes name="postCode" class="form-control" placeholder="Code postal" autofocus required>
+									<datalist id=postCodes>
+										<c:if test="${ !empty postCodes }">
+											<c:forEach var="postCode" items="${ postCodes }" varStatus="status">
+												<option value="<c:out value="${ postCode }"/>">
+											</c:forEach>
+										</c:if>
+									</datalist>
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="category">Catégorie :</label>
-									<input type="text" id="category" class="form-control" placeholder="Catégorie" name="category" value="<c:out value=""/>" autofocus required/>
+									<input list=categoriesNames name="category" class="form-control" placeholder="Catégorie" autofocus required>
+									<datalist id="categoriesNames">
+										<c:if test="${ !empty categoriesNames }">
+											<c:forEach var="categoriesName" items="${ categoriesNames }" varStatus="status">
+												<option value="<c:out value="${ categoriesName }"/>">
+											</c:forEach>
+										</c:if>
+									</datalist>
 								</div>
 								<input type="hidden" name="paction" value="<c:out value="${ paction }"/>" />
 								<input type="hidden" name="year_book" value="<c:out value="${ yearBook }"/>" />

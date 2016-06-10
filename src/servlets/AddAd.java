@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +19,11 @@ public class AddAd extends HttpServlet {
 	private static final String ADD_AD_JSP = "/WEB-INF/add_ad.jsp";
 
     private AddAdDao addAdDao;
-	
+    private int yearBook;
+    
     public AddAd() {
         super();
+        this.yearBook = 1;
     }
     
     public void init() throws ServletException {
@@ -33,8 +37,23 @@ public class AddAd extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String errorMessage = null;
 		request.setAttribute("paction", "addAd");
-		request.setAttribute("yearBook", 1);
+		request.setAttribute("yearBook", this.yearBook);
+		try {
+			ArrayList<String> categoriesNames = this.addAdDao.getCategoriesNames(this.yearBook);
+			ArrayList<String> postCodes = this.addAdDao.getPostCodes(this.yearBook);
+			ArrayList<String> streetsNames = this.addAdDao.getStreetsNames(this.yearBook);
+			ArrayList<String> townsNames = this.addAdDao.getTownsNames(this.yearBook);
+			request.setAttribute("categoriesNames", categoriesNames);
+			request.setAttribute("postCodes", postCodes);
+			request.setAttribute("streetsNames", streetsNames);
+			request.setAttribute("townsNames", townsNames);
+		} catch (DaoException e) {
+			errorMessage = e.getMessage();
+			request.setAttribute("errorMessage", errorMessage);
+		}
+
 		this.getServletContext().getRequestDispatcher(ADD_AD_JSP).forward(request, response);
 	}
 

@@ -23,8 +23,16 @@
 							</div>
 							<div class="panel-body">
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
+
 									<label class="control-label" for="adName">Nom de l'annonce :</label>
-									<input type="text" id="adName" class="form-control" placeholder="Nom de l'annonce" name="adName" value="<c:out value=""/>" autofocus required/>
+									<input list="adsNames" name="adName" class="form-control" placeholder="Nom de l'annonce" autofocus required>
+									<datalist id="adsNames">
+										<c:if test="${ !empty yearBookBean }">
+											<c:forEach var="ad" items="${ yearBookBean.ads }" varStatus="status">
+												<option value="<c:out value="${ ad.name }"/>">
+											</c:forEach>
+										</c:if>
+									</datalist>
 								</div>
 								<input type="hidden" name="paction" value="<c:out value="${ paction }"/>" />
 								<input type="hidden" name="year_book" value="<c:out value="${ yearBook }"/>" />

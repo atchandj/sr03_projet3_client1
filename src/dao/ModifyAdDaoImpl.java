@@ -4,9 +4,10 @@ import java.rmi.RemoteException;
 
 import DefaultNamespace.MainProxy;
 
-public class ModifyAdDaoImpl implements ModifyAdDao {
+public class ModifyAdDaoImpl extends AdDaoImpl implements ModifyAdDao {
 	
 	public ModifyAdDaoImpl(DaoFactory daoFactory) {
+		super(daoFactory);
     }
     
     @Override
