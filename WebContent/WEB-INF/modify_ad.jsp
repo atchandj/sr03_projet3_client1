@@ -41,7 +41,7 @@
 									</div>
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="newPhone">Nouveau téléphone :</label>
-										<input type="text" id="newPhone" class="form-control" placeholder="Nouveau téléphone" name="newPhone" value="<c:out value=""/>" autofocus/>
+										<input type="tel" id="newPhone" class="form-control" placeholder="Nouveau téléphone (XXXXXXXXXX)" name="newPhone" pattern="[0-9]{10}" value="<c:out value=""/>" autofocus/>
 									</div>
 								</fieldset>
 								<fieldset class="form-group">
@@ -70,7 +70,7 @@
 									</div>
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldPostCode">Ancien code postal :</label>
-										<input list=oldPostCodes name="oldPostCode" class="form-control" placeholder="Ancien code postal" autofocus required>
+										<input list=oldPostCodes name="oldPostCode" class="form-control" placeholder="Ancien code postal (XXXXX)" pattern="[0-9]{5}" autofocus required>
 										<datalist id=oldPostCodes>
 											<c:if test="${ !empty oldPostCodes }">
 												<c:forEach var="oldPostCode" items="${ oldPostCodes }" varStatus="status">
@@ -89,7 +89,7 @@
 									</div>
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="newPostCode">Nouveau code postal :</label>
-										<input type="text" id="newPostCode" class="form-control" placeholder="Nouveau code postal" name="newPostCode" value="<c:out value=""/>" autofocus/>
+										<input type="text" id="newPostCode" class="form-control" placeholder="Nouveau code postal (XXXXX)" name="newPostCode" pattern="[0-9]{5}"  value="<c:out value=""/>" autofocus/>
 									</div>
 								</fieldset>
 								<fieldset class="form-group">

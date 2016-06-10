@@ -24,11 +24,11 @@
 							<div class="panel-body">
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="adName">Nom de l'annonce :</label>
-									<input type="text" id="adName" class="form-control" placeholder="Nom de l'annonce" name="adName" value="<c:out value=""/>" autofocus required/>
+									<input type="text" id="adName" class="form-control" placeholder="Nom de l'annonce" name="adName" autofocus required/>
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="phone">Téléphone :</label>
-									<input type="text" id="phone" class="form-control" placeholder="Téléphone" name="phone" value="<c:out value=""/>" autofocus required/>
+									<input type="tel" id="phone" class="form-control" placeholder="Téléphone (XXXXXXXXXX)" name="phone" pattern="[0-9]{10}" autofocus required/>
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="street">Rue :</label>
@@ -54,7 +54,7 @@
 								</div>
 								<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 									<label class="control-label" for="postCode">Code postal :</label>
-									<input list=postCodes name="postCode" class="form-control" placeholder="Code postal" autofocus required>
+									<input list=postCodes name="postCode" class="form-control" placeholder="Code postal (XXXXX)" pattern="[0-9]{5}" autofocus required>
 									<datalist id=postCodes>
 										<c:if test="${ !empty postCodes }">
 											<c:forEach var="postCode" items="${ postCodes }" varStatus="status">

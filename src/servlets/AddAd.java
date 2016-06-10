@@ -58,6 +58,7 @@ public class AddAd extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String errorMessage = null;
 		int yearBook = Integer.parseInt(request.getParameter("year_book"));
 		String adName = request.getParameter("adName");
