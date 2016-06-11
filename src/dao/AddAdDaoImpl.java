@@ -4,7 +4,9 @@ import java.rmi.RemoteException;
 
 import DefaultNamespace.MainProxy;
 
-
+/* The implementation of the class witch interacts with the web 
+ * service to add an ad.
+ * */
 public class AddAdDaoImpl extends AdDaoImpl implements AddAdDao {
 	
 	public AddAdDaoImpl(DaoFactory daoFactory) {

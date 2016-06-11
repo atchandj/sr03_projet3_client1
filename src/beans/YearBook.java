@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/* This bean represents a year book */
 public class YearBook {
 	private int id;
 	private String name;

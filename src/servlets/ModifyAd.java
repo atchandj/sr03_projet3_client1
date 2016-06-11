@@ -14,7 +14,7 @@ import dao.DaoException;
 import dao.DaoFactory;
 import dao.ModifyAdDao;
 
-
+/* The servlet which allows the user to modify an ad .*/
 public class ModifyAd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String MODIFY_AD_JSP = "/WEB-INF/modify_ad.jsp";

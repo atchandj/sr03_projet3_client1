@@ -12,7 +12,7 @@ import dao.DaoException;
 import dao.DaoFactory;
 import dao.DropAdDao;
 
-
+/* The servlet which allows the user to drop an ad .*/
 public class DropAd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String DROP_AD_JSP = "/WEB-INF/drop_ad.jsp";

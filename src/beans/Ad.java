@@ -2,6 +2,7 @@ package beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/* This bean represents an ad */
 public class Ad {
 	private int yearBook;
 	private String name;

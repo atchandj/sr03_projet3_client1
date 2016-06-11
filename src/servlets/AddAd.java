@@ -13,7 +13,7 @@ import dao.DAOConfigurationException;
 import dao.DaoException;
 import dao.DaoFactory;
 
-
+/* The servlet which allows the user to add an ad .*/
 public class AddAd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String ADD_AD_JSP = "/WEB-INF/add_ad.jsp";

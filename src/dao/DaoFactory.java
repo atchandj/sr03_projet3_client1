@@ -1,6 +1,7 @@
 package dao;
 
 
+/* This class is our factoy in our dao model */
 public class DaoFactory {
 
     public static DaoFactory getInstance() throws DAOConfigurationException {
