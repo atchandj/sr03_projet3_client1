@@ -26,7 +26,7 @@
 								<fieldset class="form-group">
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldAdName">Ancien nom de l'annonce :</label>
-										<input list="oldAdsNames" name="oldAdName" class="form-control" placeholder="Ancien nom de l'annonce" autofocus required>
+										<input list="oldAdsNames" name="oldAdName" class="form-control" placeholder="Ancien nom de l'annonce" autofocus>
 										<datalist id="oldAdsNames">
 											<c:if test="${ !empty yearBookBean }">
 												<c:forEach var="ad" items="${ yearBookBean.ads }" varStatus="status">
@@ -47,7 +47,7 @@
 								<fieldset class="form-group">
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldStreet">Ancienne rue :</label>
-										<input list=oldStreetsNames name="oldStreet" class="form-control" placeholder="Ancienne rue" autofocus required>
+										<input list=oldStreetsNames name="oldStreet" class="form-control" placeholder="Ancienne rue" autofocus>
 										<datalist id="oldStreetsNames">
 											<c:if test="${ !empty oldStreetsNames }">
 												<c:forEach var="oldStreetName" items="${ oldStreetsNames }" varStatus="status">
@@ -59,7 +59,7 @@
 	
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldTown">Ancienne ville :</label>
-										<input list=oldTownsNames name="oldTown" class="form-control" placeholder="Ancienne ville" autofocus required>
+										<input list=oldTownsNames name="oldTown" class="form-control" placeholder="Ancienne ville" autofocus>
 										<datalist id="oldTownsNames">
 											<c:if test="${ !empty oldTownsNames }">
 												<c:forEach var="oldTownName" items="${ oldTownsNames }" varStatus="status">
@@ -70,7 +70,7 @@
 									</div>
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldPostCode">Ancien code postal :</label>
-										<input list=oldPostCodes name="oldPostCode" class="form-control" placeholder="Ancien code postal (XXXXX)" pattern="[0-9]{5}" autofocus required>
+										<input list=oldPostCodes name="oldPostCode" class="form-control" placeholder="Ancien code postal (XXXXX)" pattern="[0-9]{5}" autofocus>
 										<datalist id=oldPostCodes>
 											<c:if test="${ !empty oldPostCodes }">
 												<c:forEach var="oldPostCode" items="${ oldPostCodes }" varStatus="status">
@@ -95,7 +95,7 @@
 								<fieldset class="form-group">
 									<div class="form-group <c:if test="${ !empty errorMessage }"><c:out value="has-error" /></c:if>">
 										<label class="control-label" for="oldCategory">Ancienne catégorie :</label>
-										<input list=oldCategoriesNames name="oldCategory" class="form-control" placeholder="Ancienne catégorie" autofocus required>
+										<input list=oldCategoriesNames name="oldCategory" class="form-control" placeholder="Ancienne catégorie" autofocus>
 										<datalist id="oldCategoriesNames">
 											<c:if test="${ !empty oldCategoriesNames }">
 												<c:forEach var="oldCategoryName" items="${ oldCategoriesNames }" varStatus="status">
