@@ -44,28 +44,16 @@ public class MainProxy implements DefaultNamespace.Main {
     return main;
   }
   
-  public java.lang.String getAdsNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+  public void updateCategory(java.lang.String oldCategoryName, java.lang.String newCategoryName) throws java.rmi.RemoteException, dao.DaoException{
     if (main == null)
       _initMainProxy();
-    return main.getAdsNames(yearBook);
+    main.updateCategory(oldCategoryName, newCategoryName);
   }
   
-  public java.lang.String getYearBook(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+  public void addCategory(java.lang.String categoryName) throws java.rmi.RemoteException, dao.DaoException{
     if (main == null)
       _initMainProxy();
-    return main.getYearBook(yearBook);
-  }
-  
-  public java.lang.String getAd(int yearBook, java.lang.String adName) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    return main.getAd(yearBook, adName);
-  }
-  
-  public void addAd(int yearBook, java.lang.String adName, java.lang.String phone, java.lang.String street, java.lang.String town, java.lang.String postCode, java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    main.addAd(yearBook, adName, phone, street, town, postCode, category);
+    main.addCategory(categoryName);
   }
   
   public void modifyAd(int yearBook, java.lang.String oldAdName, java.lang.String oldStreet, java.lang.String oldTown, java.lang.String oldPostCode, java.lang.String oldCategory, java.lang.String newAdName, java.lang.String newPhone, java.lang.String newStreet, java.lang.String newTown, java.lang.String newPostCode, java.lang.String newCategory) throws java.rmi.RemoteException, dao.DaoException{
@@ -98,18 +86,6 @@ public class MainProxy implements DefaultNamespace.Main {
     return main.getTownsNames(yearBook);
   }
   
-  public void updateCategory(java.lang.String oldCategoryName, java.lang.String newCategoryName) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    main.updateCategory(oldCategoryName, newCategoryName);
-  }
-  
-  public void addCategory(java.lang.String categoryName) throws java.rmi.RemoteException, dao.DaoException{
-    if (main == null)
-      _initMainProxy();
-    main.addCategory(categoryName);
-  }
-  
   public void dropCategory(java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{
     if (main == null)
       _initMainProxy();
@@ -120,6 +96,48 @@ public class MainProxy implements DefaultNamespace.Main {
     if (main == null)
       _initMainProxy();
     main.dropAd(yearBook, adName);
+  }
+  
+  public java.lang.String getAdsNames(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsNames(yearBook);
+  }
+  
+  public java.lang.String getYearBook(int yearBook) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getYearBook(yearBook);
+  }
+  
+  public java.lang.String getAd(int yearBook, java.lang.String adName) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAd(yearBook, adName);
+  }
+  
+  public void addAd(int yearBook, java.lang.String adName, java.lang.String phone, java.lang.String street, java.lang.String town, java.lang.String postCode, java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    main.addAd(yearBook, adName, phone, street, town, postCode, category);
+  }
+  
+  public java.lang.String getAdsByCategory(int yearBook, java.lang.String category) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsByCategory(yearBook, category);
+  }
+  
+  public java.lang.String getAdsByName(int yearBook, java.lang.String name) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsByName(yearBook, name);
+  }
+  
+  public java.lang.String getAdsByAddress(int yearBook, java.lang.String street, java.lang.String town, java.lang.String postCode) throws java.rmi.RemoteException, dao.DaoException{
+    if (main == null)
+      _initMainProxy();
+    return main.getAdsByAddress(yearBook, street, town, postCode);
   }
   
   
